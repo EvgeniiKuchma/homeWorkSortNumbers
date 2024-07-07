@@ -11,7 +11,7 @@ namespace homeWorkSortNumbers
             int numbresArraySize = 10;
             int minValue = 1;
             int maxValue = 10;
-            int tempNumber = 1;
+            int tempNumber = 0;
 
             int[] numberesArray = new int[numbresArraySize];
 
