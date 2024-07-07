@@ -8,28 +8,41 @@ namespace homeWorkSortNumbers
         {
             Random random = new Random();
 
-            int numberesArraySize = 10;
+            int numbresArraySize = 10;
             int minValue = 1;
             int maxValue = 10;
-            int tempNumber = 0;
+            int tempNumber = 1;
 
-            int[] numberesArray = new int[numberesArraySize];
+            int[] numberesArray = new int[numbresArraySize];
 
-            for (int i = 0; i < numberesArraySize; i++)
+            for (int i = 0; i < numbresArraySize; i++)
             {
                 numberesArray[i] = random.Next(minValue, maxValue);
             }
 
-            for (int i = 0; i < numberesArraySize - 1; i++)
+            foreach (int numberes in numberesArray)
             {
-                if (numberesArray[i] > numberesArray[i + 1])
-                {
-                    tempNumber = numberesArray[i];
-                    numberesArray[i + 1] = numberesArray[i];
-                    numberesArray[i] = tempNumber;
-                }
+                Console.Write($"{numberes} ");
+            }
 
-                Console.Write(numberesArray[i] + ", ");
+            Console.WriteLine("\n\n");
+
+            for (int i = 0; i < numberesArray.Length; i++)
+            {
+                for (int j = 0; j < numberesArray.Length - 1; j++)
+                {
+                    if (numberesArray[j] > numberesArray[j + 1])
+                    {
+                        tempNumber = numberesArray[j + 1];
+                        numberesArray[j + 1] = numberesArray[j];
+                        numberesArray[j] = tempNumber;
+                    }
+                }
+            }
+
+            for (int i = 0; i < numberesArray.Length; i++)
+            {
+                Console.Write(numberesArray[i] + " ");
             }
 
             Console.WriteLine();
